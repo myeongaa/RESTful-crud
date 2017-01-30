@@ -1,0 +1,7 @@
+<%= form_tag({controller: "posts", action: "update"}, method: "put") do %>
+  <%= label_tag(:title, "Title:") %>
+  <%= text_field_tag(:title,@post.title) %>
+  <%= label_tag(:content, "Content:") %>
+  <%= text_area_tag(:content, @post.content,size: "24x6") %>
+  <%= submit_tag("submit") %>
+<% end %>

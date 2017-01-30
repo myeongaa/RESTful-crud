@@ -1,0 +1,6 @@
+title : <%= @post.title %></br>
+content : <%= @post.content %>
+
+<%= link_to "edit",edit_post_path(@post.id) %>
+
+<%= link_to "delete",post_path(@post.id),:method =>"delete" %>
