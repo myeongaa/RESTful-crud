@@ -12,7 +12,7 @@ class PostsController < ApplicationController
         post.content = @content
         post.save
         
-        redirect_to "/posts"
+        redirect_to posts_path
     end
     
     def new
@@ -43,8 +43,11 @@ class PostsController < ApplicationController
     
     def destroy
         @post_id = params[:id]
-        @post = Post.find_by_id(@post_id).destroy
+        @post = Post.find_by_id(@post_id)
+        @post.destroy
         
-        redirect_to "/posts"
+        redirect_to posts_path
     end
+    
+    
 end
